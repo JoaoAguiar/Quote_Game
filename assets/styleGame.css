@@ -1,0 +1,431 @@
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  
+  bottom: 0;
+  left:   -50%;
+  right:  -50%;
+  top:    0;
+
+  opacity: 0.5;
+  
+  position: fixed;
+  
+  z-index: -1;
+}
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration:  4s;
+}
+.bg3 {
+  animation-duration: 5s;
+}
+
+.wrapper {
+  position: absolute;
+
+  top:  50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%); 
+}
+
+.circle {
+  display:  inline-block;
+  position: relative;
+  
+  width:  15px;
+  height: 15px;
+  
+  background-color: #fcdc29;
+  
+  border-radius: 50%;
+  
+  animation: loading 1s cubic-bezier(.8, .5, .2, 1.4) infinite;
+  
+  transform-origin: bottom center;
+}
+
+.circle-1 {
+  animation-delay: 0.1s;
+}
+.circle-2 {
+  animation-delay: 0.2s;
+}
+.circle-3 {
+  animation-delay: 0.3s;
+}
+.circle-4 {
+  animation-delay: 0.4s;
+}
+.circle-5 {
+  animation-delay: 0.5s;
+}
+.circle-6 {
+  animation-delay: 0.6s;
+}
+.circle-7 {
+  animation-delay: 0.7s;
+}
+.circle-8 {
+  animation-delay: 0.8s;
+}
+
+.page { 
+  display: none
+}
+
+.game_page {
+  width:  75%;
+  height: 75%;
+  
+  text-align: center;
+  position:   absolute;
+  
+  top:    0;
+  bottom: 0;
+  left:   0;
+  right:  0;
+  
+  margin: auto;
+}
+
+.game_question {
+  height: 40%;
+  width:  80%;
+
+  top:    0;
+  bottom: 0;
+  left:   0;
+  right:  0;
+  
+  margin: auto;
+
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  text-align:      center;
+
+  font-size:   15px;
+  font-family: 'Luckiest Guy', cursive;
+
+  opacity: 0;
+  transform: translateY(-3rem);
+
+  animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.rules_buttons {
+  height: 60%;
+  width:  80%;
+    
+  top:    0;
+  bottom: 0;
+  left:   0;
+  right:  0;
+  
+  margin: auto;
+}
+
+.button1 {
+  height: 100%;
+  width:  50%;
+  
+  position: relative;
+  float:    left;
+
+  opacity: 0;
+  transform: translateX(-10rem);
+
+  animation: fadeInSide 1s ease 2.5s forwards;
+}
+.button2 {
+  height: 100%;
+  width:  50%;
+
+  position: relative;
+  float:    left;
+
+  opacity: 0;
+  transform: translateX(10rem);
+
+  animation: fadeInSide 1s ease 1.5s forwards;
+}
+
+.image1 {
+  height: 100%;
+  width:  100%;
+  
+  opacity: 1;
+
+  animation: rotation2 8s infinite linear;
+}
+.image2 {
+  height: 100%;
+  width:  100%;
+  
+  opacity: 1;
+
+  animation: rotation1 8s infinite linear;
+}
+
+.button {
+  height: 100%;
+  width:  65%;
+ 
+  margin: auto;
+
+  background: none;
+}
+.button:hover .image1 .image2 {
+  opacity: 0.3;
+}
+.button:hover .choiceA {
+  opacity: 0.8;
+
+  font-size:   40px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+
+  color:            white;
+  background-color: rgb(83, 82, 82);
+
+  border-radius: 20%;
+  border:        5px solid black;
+  
+  padding: 16px 32px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+.button:hover .choiceB {
+  opacity: 0.8;
+
+  font-size:   40px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+
+  color:            white;
+  background-color: rgb(83, 82, 82);
+
+  border-radius: 20%;
+  border:        5px solid black;
+  
+  padding: 16px 32px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.choiceA {  
+  text-align: center;
+
+  opacity: 0;
+  
+  position: absolute;
+
+  border-radius: 20%;
+  border:        5px solid black;
+
+  font-size:   40px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+
+  color:            white;
+  background-color: rgb(83, 82, 82);
+  
+  top:  50%;
+  left: 50%;
+
+  transition:    .5s ease;
+  transform:     translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+} 
+.choiceB {  
+  text-align: center;
+
+  opacity: 0;
+  
+  position: absolute;
+
+  border-radius: 20%;
+  border:        5px solid black;
+
+  color:            white;
+  background-color: rgb(83, 82, 82);
+
+  font-size:   40px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+  
+  top:  50%;
+  left: 50%;
+
+  transition:    .5s ease;
+  transform:     translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.end_container {
+  display:         none;
+  position:        fixed;
+  z-index:         1; 
+  align-items:     center;
+  justify-content: center; 
+
+  left: 0;
+  top:  0;
+    
+  width:  100%; 
+  height: 100%;  
+}
+
+.end_content {
+  height: 30vw;
+  width:  60vh;
+
+  background-color: rgb(43, 42, 42);
+    
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: space-around;
+    
+  border-radius: 25px;
+}
+.end_content h1 {
+  font-size:   60px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+
+  height: 50px;
+    
+  color: white;
+    
+  text-align: center;
+}
+
+.grade_details {
+  width: 75%;
+  height: 40%;
+
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: space-around;
+}
+.grade_details p {
+  font-size:   35px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+
+  color: white;
+
+  text-align: center;
+}
+
+.details {
+  font-size: 30px;
+}
+
+.end_button {
+  height: 50px;
+  width:  100%;
+
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+.end_button a {
+  width: 150px;
+  height: 50px;
+
+  background: none;
+  color: white;
+
+  outline: none;
+    
+  font-size:   40px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+    
+  cursor: pointer;
+
+  border:        5px solid white;
+  border-radius: 20px;
+
+  text-decoration: none;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;  
+}
+.end_button a:hover {
+    background-color: rgb(83, 82, 82);
+}
+
+.answer {
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  display:         none;
+  position:        fixed;
+  align-items:     center;
+  justify-content: center; 
+}
+
+.aux_image {
+  width: 250px;
+  height: 250px;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(-25%); }
+  100% { transform: translateX(25%);  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInSide {
+  to {
+    opacity:   1;
+    transform: translateX(0);
+  }
+}
+@keyframes loading {
+  0% { 
+    transform: translateY(0px);
+    background-color: #fcdc29;
+  }
+  50% {
+    transform: translateY(50px);
+    background-color: #ef584a;
+  }
+  100% {
+    transform: translateY(0px);
+    background-color: #fcdc29;
+  }
+}
+@keyframes rotation1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
+  }
+}
+@keyframes rotation2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
