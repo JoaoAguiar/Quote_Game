@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="author" content="João Aguiar">
+        <meta name="description" content="Online Game to Find From Who is a Quote">
+		<meta name="keywords" content="João Aguiar Quote Game" />
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/png" href="assets/santos.png">
+
+        <link rel="stylesheet" href="game.css">
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Luckiest Guy Normal -->
+		<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+		<!-- Amatic SC -->
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+        <title>Game</title>
+	</head>
+	<body onload="NextQuestion(0)">
+		<div class="background"></div>
+		<div class="background background2"></div>
+		<div class="background background3"></div>
+
+		<div class="wrapper">
+            <span class="circle circle-1"></span>
+            <span class="circle circle-2"></span>
+            <span class="circle circle-3"></span>
+            <span class="circle circle-4"></span>
+            <span class="circle circle-5"></span>
+            <span class="circle circle-6"></span>
+            <span class="circle circle-7"></span>
+            <span class="circle circle-8"></span>
+        </div>
+
+		<div class="page">
+		    <div class="end_container" id="score_modal">
+	            <div class="end_content">
+	                <h1>This is the END.</h1>
+	              
+	                <div class="grade_details">
+	                    <p>
+	                    	<span class="details">Attempts</span>: 10 <br>
+	                    	<span class="details">Wrong Answers</span>: <span id="wrong_answers"></span> <br>
+	                    	<span class="details">Right Answers</span>: <span id="right_answers"></span> <br>
+	                    	<span class="details">Grade</span>: <span id="grade_percentage"></span>%
+	                    </p>
+	                </div>
+
+	                <div class="end_button">
+	                    <a href="game.html" onclick="closeScoreModal()">Go again?</a>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div id="noice" class="answer">
+	        	<img src="assets/noice.png" alt="nice" class="aux_image">
+	        </div>
+
+	        <div id="not_noice" class="answer">
+	        	<img src="assets/not_noice.png" alt="wrong" class="aux_image">
+	        </div>
+
+			<div class="game_page">
+				<div class="game_question">
+					<h1 id="display_question"></h1>
+				</div>
+			
+				<div class="rules_buttons">
+					<div class="button1">
+						<div class="button">
+							<img src="assets/jesus.png" alt="A" class="image1">
+							<button value="optionA" class="choiceA" id="option_one" onclick="handleNextQuestion(1)"></button>
+						</div>
+					</div>
+			
+					<div class="button2">
+						<div class="button">
+							<img src="assets/santos.png" alt="B" class="image2">
+							<button value="optionB" class="choiceB" id="option_two" onclick="handleNextQuestion(2)"></button>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="game.js"></script>
+	<script src="loader.js"></script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="author" content="João Aguiar">
+        <meta name="description" content="Online Game to Find From Who is a Quote">
+		<meta name="keywords" content="João Aguiar Quote Game" />
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/png" href="assets/santos.png">
+		
+        <link rel="stylesheet" href="index.css">
+	
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Luckiest Guy Normal -->
+		<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+		<!-- Amatic SC -->
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+        <title>Who Quoted This?</title>
+	</head>
+	<body style="overflow: hidden; position: relative; margin: 0;">
+		<div class="button_clicked"></div>
+
+		<div class="background"></div>
+		<div class="background background2"></div>
+		<div class="background background3"></div>
+
+		<div class="main_page">
+			<div style="margin: 25px;">
+				<span>Who Quoted This?</span>
+			</div>
+
+			<div class="main_button" onclick="timeFunction()">
+				<h3>Play</h3>
+			</div>
+		</div>
+
+		<div class="rules_page">
+			<div class="rules">
+				<span>Game Rules</span>
+				<h3><span style="font-size: 2vw; text-shadow: none; font-family: 'Amatic SC', cursive; color: white;">1)</span>  You have to answer 10 questions about quotes</h3>
+				<h3><span style="font-size: 2vw; text-shadow: none; font-family: 'Amatic SC', cursive; color: white">2)</span>  When answering those 10 questions you have to chose between two world-renowned figures</h3>
+				<h3><span style="font-size: 2vw; text-shadow: none; font-family: 'Amatic SC', cursive; color: white;">3)</span>  Yee, and that's it</h3>
+			</div>
+
+			<div class="rules_button" onclick="startGame()">
+				<h3>Go</h3>
+			</div>
+		</div>
+
+		<script>
+			function timeFunction() {
+				//document.getElementsByClassName("button_clicked")[0].style.animation = "new_background 5s ease 0.5s forwards";
+				document.getElementsByClassName("main_page")[0].style.cursor = "none";
+				document.getElementsByClassName("main_page")[0].style.animation = "disapear 3s ease forwards";
+
+            	setTimeout(function() { 
+					document.getElementsByClassName("rules_page")[0].style.animation = "appear 3s ease forwards";
+					document.getElementsByClassName("rules_page")[0].style.zIndex = "100";
+				}, 3500);
+        	}
+
+			function startGame() {
+				window.open("game.html", "_self")
+			}
+		</script>
+	</body>
+</html>

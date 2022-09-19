@@ -1,0 +1,249 @@
+.background {
+  animation: slide 3s ease-in-out infinite alternate;
+  
+  background-image: linear-gradient(-60deg, #ec38bc 48%, #7303c0 52%);
+  
+  bottom: 0;
+  left:   -50%;
+  right:  -50%;
+  top:    0;
+
+  opacity: 0.5;
+  
+  position: fixed;
+  
+  z-index: -1;
+}
+.background2 {
+  animation-direction: alternate-reverse;
+  animation-duration:  4s;
+}
+.background3 {
+  animation-duration: 5s;
+}
+
+.button_clicked {
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+
+  z-index: 1;
+
+  transform: translateY(100%); 
+}
+
+.main_page {
+  height: 100vh;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+  
+  align-items: center;
+  
+  justify-content: center;
+
+  opacity: 0;
+
+  user-select: none;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  animation: fade_up 5s ease 1s forwards;
+}
+.main_page span {
+  font-size: 8vw;
+  font-family: 'Luckiest Guy', cursive;
+
+  text-shadow: 1px 4px hsl(204, 43%, 93%), 2px 7px #ec38bc, 3px 10px #7303c0;
+
+  color: hsl(71, 73%, 54%);
+}
+
+.main_button {    
+  height: 150px;
+  width: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+  
+  align-items: center;
+  
+  justify-content: center;
+  box-shadow: 0px 0px 5px 5px white;
+  background: hsl(71, 73%, 54%);
+
+  border-radius: 50%;
+
+  margin: 0;
+}
+.main_button:hover {
+  animation: shadow_effect 1s ease 0s forwards;
+}
+.main_button h3 {
+  color: hsl(204, 43%, 93%);
+
+  -webkit-text-stroke: 1px #ec38bc;
+
+  cursor: pointer;
+
+  text-decoration: none;
+  text-align: center;
+
+  font-size: 3vw;
+  font-family: 'Luckiest Guy', cursive;
+
+  margin: 0;
+
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1); 
+}
+
+.rules_page { 
+  height: 100vh;
+  width: 65vw;
+  
+  text-align: center;
+  position:   absolute;
+  
+  top:    0;
+  bottom: 0;
+  left:   0;
+  right:  0;
+  
+  margin: auto;
+
+  opacity: 0;
+
+  z-index: 0;
+
+  position: fixed;
+
+  user-select: none;
+}
+.rules {
+  width:  100%;
+  
+  text-align: center;
+  
+  top:    0;
+  bottom: 0;
+  left:   0;
+  right:  0;
+  
+  margin: auto;
+  margin-top: 100px;
+}
+.rules span {
+  font-size: 7.5vw;
+  font-family: 'Luckiest Guy', cursive;
+
+  text-shadow: 1px 4px hsl(204, 43%, 93%), 2px 7px #ec38bc, 3px 10px #7303c0;
+
+  color: hsl(71, 73%, 54%);
+}
+.rules h3 {
+  font-size: 2vw;
+  font-family: 'Amatic SC', cursive;
+
+  color: white
+}
+.rules_button { 
+  width:  14%;
+  height: 18%;
+
+  border-radius: 50%;
+
+  box-shadow: 0px 0px 5px 5px white;
+  background: hsl(71, 73%, 54%);
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  margin: auto;
+  margin-top: 10vh;
+
+  justify-content: center;
+
+  align-items: center;
+  
+  display: flex;
+}
+.rules_button:hover {
+  animation: shadow_effect 1s ease 0s forwards;
+}
+.rules_button h3 {
+  color: hsl(204, 43%, 93%);
+
+  -webkit-text-stroke: 1px #ec38bc;
+
+  text-decoration: none;
+  text-align: center;
+
+  font-size: 3vw;
+  font-family: 'Luckiest Guy', cursive;
+
+  margin: 0;
+
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1); 
+}
+
+@keyframes slide {
+  0% { 
+    transform: translateX(-25%); 
+  }
+  100% { 
+    transform: translateX(25%);
+  }
+}
+@keyframes fade_up {
+  to { 
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+@keyframes shadow_effect {
+  to { 
+    box-shadow: 0px 0px 15px 15px white;
+  }
+}
+@keyframes slide {
+  0%   { 
+    transform: translateX(-25%); 
+  }
+  100% { 
+    transform: translateX(25%);  
+  }
+}
+@keyframes new_background {
+  0% {
+    transform: translateY(100%); 
+  }
+  100% {
+    transform: translateY(0%); 
+  }
+}
+@keyframes disapear {
+  0% {
+    opacity: 1; 
+  }
+  100% {
+    opacity: 0;  
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1;  
+  }
+}
