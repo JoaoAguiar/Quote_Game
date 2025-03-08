@@ -1,0 +1,218 @@
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: hsl(71, 73%, 54%);
+  --primary-dark: #c5b100;
+  --accent-color-1: #ec38bc;
+  --accent-color-2: #7303c0;
+  --text-light: hsl(204, 43%, 93%);
+  --text-shadow-1: #ec38bc;
+  --text-shadow-2: #7303c0;
+  --shadow-color: white;
+  --font-title: 'Luckiest Guy', cursive;
+  --font-body: 'Amatic SC', cursive;
+  --animation-timing: cubic-bezier(0.86, 0, 0.07, 1);
+  --transition-standard: all 0.3s ease;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Background animations */
+.background {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, var(--accent-color-1) 48%, var(--accent-color-2) 52%);
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  top: 0;
+  opacity: 0.5;
+  position: fixed;
+  z-index: -1;
+}
+
+.background2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.background3 {
+  animation-duration: 5s;
+}
+
+/* Main page styles */
+.main_page {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  user-select: none;
+  overflow: hidden;
+  z-index: 1;
+  animation: fade_up 2s ease 0.5s forwards;
+}
+
+.main_page .title {
+  margin: 5vh 0;
+  text-align: center;
+}
+
+.main_page h1 {
+  margin: 0;
+}
+
+.main_page span {
+  font-size: 8vw;
+  font-family: var(--font-title);
+  text-shadow: 1px 4px var(--text-light), 2px 7px var(--text-shadow-1), 3px 10px var(--text-shadow-2);
+  color: var(--primary-color);
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+/* Main button styles */
+.main_button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 5px 5px var(--shadow-color);
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 1em;
+  margin: 5vh 0;
+  transition: var(--transition-standard);
+  width: 20vw;
+  height: 20vw;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 250px;
+  max-height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_button:hover {
+  animation: shadow_effect 1s ease forwards;
+  background: var(--primary-dark);
+}
+
+.main_button:focus {
+  outline: 3px solid var(--accent-color-2);
+  animation: shadow_effect 1s ease forwards;
+}
+
+.main_button h2 {
+  color: var(--text-light);
+  -webkit-text-stroke: 1px var(--text-shadow-1);
+  text-decoration: none;
+  text-align: center;
+  font-size: 6vw;
+  font-family: var(--font-title);
+  margin: 0;
+  transition: transform 0.5s var(--animation-timing);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .main_button {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .main_button {
+    width: 30vw;
+    height: 30vw;
+  }
+  
+  .main_button h2 {
+    font-size: 7vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .main_button {
+    width: 40vw;
+    height: 40vw;
+  }
+  
+  .main_button h2 {
+    font-size: 8vw;
+  }
+
+  .main_page span {
+    font-size: 10vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .main_button {
+    width: 50vw;
+    height: 50vw;
+  }
+  
+  .main_button h2 {
+    font-size: 10vw;
+  }
+
+  .main_page span {
+    font-size: 12vw;
+  }
+}
+
+/* Keyframes for animations */
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+@keyframes fade_up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shadow_effect {
+  to {
+    box-shadow: 0px 0px 15px 15px var(--shadow-color);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,252 @@
+/* CSS Variables for consistent theming */
+:root {
+  --primary-color: hsl(71, 73%, 54%);
+  --primary-dark: #c5b100;
+  --accent-color-1: #ec38bc;
+  --accent-color-2: #7303c0;
+  --text-light: hsl(204, 43%, 93%);
+  --text-shadow-1: #ec38bc;
+  --text-shadow-2: #7303c0;
+  --shadow-color: white;
+  --font-title: 'Luckiest Guy', cursive;
+  --font-body: 'Amatic SC', cursive;
+  --animation-timing: cubic-bezier(0.86, 0, 0.07, 1);
+  --transition-standard: all 0.3s ease;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Background animations */
+.background {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, var(--accent-color-1) 48%, var(--accent-color-2) 52%);
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  top: 0;
+  opacity: 0.5;
+  position: fixed;
+  z-index: -1;
+}
+
+.background2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.background3 {
+  animation-duration: 5s;
+}
+
+/* Rules page styles */
+.rules_page {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  user-select: none;
+  overflow: hidden;
+  z-index: 1;
+  animation: fade_up 2s ease 0.5s forwards;
+}
+
+.rules {
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.rules h1 {
+  margin-bottom: 5vh;
+}
+
+.rules span {
+  font-size: 8vw;
+  font-family: var(--font-title);
+  text-shadow: 1px 4px var(--text-light), 2px 7px var(--text-shadow-1), 3px 10px var(--text-shadow-2);
+  color: var(--primary-color);
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+/* Rules list styling */
+.rule-list {
+  list-style-type: none;
+  counter-reset: rule-counter;
+  margin: 5vh 0;
+}
+
+.rule-list li {
+  font-size: 2.5vw;
+  font-family: var(--font-body);
+  color: white;
+  margin: 2vh 0;
+  counter-increment: rule-counter;
+  position: relative;
+  padding-left: 3vw;
+}
+
+.rule-list li::before {
+  content: counter(rule-counter) ")";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Rules button styles */
+.rules_button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 5px 5px var(--shadow-color);
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 1em;
+  margin: 5vh 0;
+  transition: var(--transition-standard);
+  width: 15vw;
+  height: 15vw;
+  min-width: 120px;
+  min-height: 120px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.rules_button:hover {
+  animation: shadow_effect 1s ease forwards;
+  background: var(--primary-dark);
+}
+
+.rules_button:focus {
+  outline: 3px solid var(--accent-color-2);
+  animation: shadow_effect 1s ease forwards;
+}
+
+.rules_button h2 {
+  color: var(--text-light);
+  -webkit-text-stroke: 1px var(--text-shadow-1);
+  text-decoration: none;
+  text-align: center;
+  font-size: 5vw;
+  font-family: var(--font-title);
+  margin: 0;
+  transition: transform 0.5s var(--animation-timing);
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .rules_button {
+    width: 20vw;
+    height: 20vw;
+  }
+  
+  .rules_button h2 {
+    font-size: 7vw;
+  }
+
+  .rules span {
+    font-size: 10vw;
+  }
+
+  .rule-list li {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .rules_button {
+    width: 25vw;
+    height: 25vw;
+  }
+  
+  .rules_button h2 {
+    font-size: 8vw;
+  }
+
+  .rules span {
+    font-size: 12vw;
+  }
+
+  .rule-list li {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .rules_button {
+    width: 30vw;
+    height: 30vw;
+  }
+  
+  .rules_button h2 {
+    font-size: 9vw;
+  }
+
+  .rules span {
+    font-size: 14vw;
+  }
+
+  .rule-list li {
+    font-size: 5vw;
+  }
+}
+
+/* Keyframes for animations */
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+@keyframes fade_up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shadow_effect {
+  to {
+    box-shadow: 0px 0px 15px 15px var(--shadow-color);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

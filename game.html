@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="João Aguiar">
+    <meta name="description" content="Play the Quote Game - test your knowledge of famous quotes">
+    <meta name="keywords" content="quote game, Jesus Christ, Gustavo Santos, trivia" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ec38bc">
+    
+    <link rel="shortcut icon" type="image/png" href="assets/santos.png">
+    <link rel="stylesheet" href="game.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <title>Quote Game | Gameplay</title>
+</head>
+<body>
+    <!-- Background animations -->
+    <div class="background"></div>
+    <div class="background background2"></div>
+    <div class="background background3"></div>
+
+    <!-- Loading animation -->
+    <div class="wrapper" aria-label="Loading game">
+        <span class="circle circle-1"></span>
+        <span class="circle circle-2"></span>
+        <span class="circle circle-3"></span>
+        <span class="circle circle-4"></span>
+        <span class="circle circle-5"></span>
+        <span class="circle circle-6"></span>
+        <span class="circle circle-7"></span>
+        <span class="circle circle-8"></span>
+    </div>
+
+    <!-- Game content -->
+    <main class="page">
+        <!-- End game modal -->
+        <div class="end_container" id="score_modal" aria-modal="true" aria-hidden="true">
+            <div class="end_content">
+                <h1>Game Complete!</h1>
+                
+                <div class="grade_details">
+                    <p>
+                        <span class="details">Attempts</span>: 10 <br>
+                        <span class="details">Wrong Answers</span>: <span id="wrong_answers">0</span> <br>
+                        <span class="details">Right Answers</span>: <span id="right_answers">0</span> <br>
+                        <span class="details">Score</span>: <span id="grade_percentage">0</span>%
+                    </p>
+                </div>
+
+                <div class="end_button">
+                    <button onclick="resetGame()" class="restart-button">Play Again</button>
+                    <a href="index.html" class="home-button">Home</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Answer feedback -->
+        <div id="noice" class="answer" aria-live="polite">
+            <img src="assets/noice.png" alt="Correct answer" class="aux_image">
+        </div>
+
+        <div id="not_noice" class="answer" aria-live="polite">
+            <img src="assets/not_noice.png" alt="Wrong answer" class="aux_image">
+        </div>
+
+        <!-- Game question and choices -->
+        <section class="game_page">
+            <div class="game_question">
+                <blockquote id="display_question"></blockquote>
+            </div>
+        
+            <div class="rules_buttons">
+                <div class="button1">
+                    <div class="button" role="button" tabindex="0" onclick="handleNextQuestion(1)" onkeypress="if(event.key==='Enter') handleNextQuestion(1)">
+                        <img src="assets/jesus.png" alt="Jesus Christ" class="image1">
+                        <span class="choiceA" id="option_one">Jesus Christ</span>
+                    </div>
+                </div>
+        
+                <div class="button2">
+                    <div class="button" role="button" tabindex="0" onclick="handleNextQuestion(2)" onkeypress="if(event.key==='Enter') handleNextQuestion(2)">
+                        <img src="assets/santos.png" alt="Gustavo Santos" class="image2">
+                        <span class="choiceB" id="option_two">Gustavo Santos</span>
+                    </div>
+                </div>    
+            </div>
+        </section>
+    </main>
+
+    <script src="game.js"></script>
+    <script src="loader.js"></script>
+</body>
+</html>

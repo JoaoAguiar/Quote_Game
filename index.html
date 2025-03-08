@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="author" content="João Aguiar">
+        <meta name="description" content="Interactive game challenging players to identify the source of famous quotes">
+		<meta name="keywords" content="quote game, Jesus Christ, Gustavo Santos, trivia game" />
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#ec38bc">
+
+        <link rel="shortcut icon" type="image/png" href="assets/santos.png">
+		
+        <link rel="stylesheet" href="index.css">
+	
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Luckiest Guy Normal -->
+		<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+		<!-- Amatic SC -->
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+        <title>Quote Game | Test Your Knowledge</title>
+	</head>
+	<body style="overflow: hidden; position: relative; margin: 0;">
+		<!-- Background animations -->
+		<div class="background"></div>
+		<div class="background background2"></div>
+		<div class="background background3"></div>
+
+		<!-- Main page content -->
+		<main class="main_page">
+			<header class="title">
+				<h1><span>Who Quoted This?</span></h1>
+			</header>
+
+			<button class="main_button" onclick="navigateToRules()" aria-label="Play game">
+				<h2>Play</h2>
+			</button>
+		</main>
+
+		<script>
+			function navigateToRules() {
+				const mainPage = document.querySelector(".main_page");
+				mainPage.style.cursor = "none";
+				mainPage.style.animation = "disappear 3s ease forwards";
+
+            	setTimeout(function() { 
+					window.location.href = "rules.html";
+				}, 3000);
+        	}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="João Aguiar">
+    <meta name="description" content="Rules for the Quote Game - identify quotes from Jesus Christ or Gustavo Santos">
+    <meta name="keywords" content="quote game, rules, Jesus Christ, Gustavo Santos" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ec38bc">
+    
+    <link rel="shortcut icon" type="image/png" href="assets/santos.png">
+    <link rel="stylesheet" href="rules.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <title>Quote Game | Rules</title>
+</head>
+<body>
+    <!-- Background animations -->
+    <div class="background"></div>
+    <div class="background background2"></div>
+    <div class="background background3"></div>
+
+    <!-- Rules page content -->
+    <main class="rules_page">
+        <section class="rules">
+            <header>
+                <h1><span>Game Rules</span></h1>
+            </header>
+            
+            <ol class="rule-list">
+                <li>You will face 10 random quotes from our collection</li>
+                <li>For each quote, choose between Jesus Christ and Gustavo Santos</li>
+                <li>Receive immediate feedback and track your score</li>
+            </ol>
+        </section>
+
+        <button class="rules_button" onclick="startGame()" aria-label="Start game">
+            <h2>Go</h2>
+        </button>
+    </main>
+
+    <script>
+        function startGame() {
+            window.location.href = "game.html";
+        }
+    </script>
+</body>
+</html>
